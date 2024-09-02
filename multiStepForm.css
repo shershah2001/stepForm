@@ -78,7 +78,7 @@
                 display:flex;
                 align-items:flex-start;
                 justify-content:space-between;
-               counter-reset:step-number;
+               /* counter-reset:step-number; */
             }
             .progress-container{
                 position:relative;

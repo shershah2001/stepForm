@@ -1,100 +1,185 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>multistep form</title>
     <link rel="stylesheet" href="multiStepForm.css">
     <script src="multiStepForm.js"></script>
+    <link rel="stylesheet" href="build/css/intlTelInput.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
 </head>
+
 <body>
     <form class="form-wizard">
-     <h1>Registration</h1>
+        <h1>Get Exact Quotation</h1>
 
-     <!-- completed -->
-     <div class="completed" hidden>
-        <svg
-        xmlns="http://www.w3.org/2000/svg"
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke-width="1.5"
-        stroke="currentColor"
-      >
-        <path
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
-        />
-      </svg>
-        <h3>Registration Successful!</h3>
-        <p>Your account has been created.</p>
-     </div>
-     <div class="progress-container">
-        <div class="progress"></div>
-        <ol>
-            <li class="current">Personal Info</li>
-            <li >Contact Info</li>
-            <li>Account Info</li>
-            <li>About</li>
-        </ol>
-     </div>
-     <!-- progress-container -->
-     
-     <div class="steps-container">
-        <div class="step">
-            <h3>Personal Information</h3>
-            <div class="form-control">
-                <label for="first-name">First Name</label>
-                <input type="text" id="first-name" name="first-name" required>
-            </div>
-            <div class="form-control">
-                <label for="last-name">Last Name</label>
-                <input type="text" id="last-name" name="last-name" required>
-            </div>
+        <!-- completed -->
+        <div class="completed" hidden>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+            </svg>
+            <h3>Registration Successful!</h3>
+            <p>Your account has been created.</p>
         </div>
-        <div class="step">
-            <h3>Contact Information</h3>
-            <div class="form-control">
-                <label for="email">Email</label>
-                <input type="email" id="email" name="email" required>
-            </div>
-            <div class="form-control">
-                <label for="phone">Phone Number</label>
-                <input type="tel" id="phone" name="phone" required>
-            </div>
+        <div class="progress-container">
+            <div class="progress"></div>
+            <ol>
+                <!-- <li class="current">Personal Info</li>
+                <li>Contact Info</li>
+                <li>Account Info</li>
+                <li>About</li>
+                <li>Personal Info</li>
+                <li>Contact Info</li>
+                <li>Account Info</li>
+                <li>About</li>
+                <li>About</li> -->
+            </ol>
         </div>
-        <div class="step">
-            <h3>Account Information</h3>
-            <div class="form-control">
-                <label for="username">Username</label>
-                <input type="text" id="username" name="username" required>
-            </div>
-            <div class="form-control">
-                <label for="password">Password</label>
-                <input type="password" id="password" name="password" required>
-            </div>
-            <div class="form-control">
-                <label for="Confirm-password">Confirm Password</label>
-                <input type="password" id="Confirm-password" name="Confirm-password" required>
-            </div>
-        </div>
-        <div class="step">
-            <h3>About</h3>
-            <div class="form-control">
-                <label for="bio">Bio</label>
-                <textarea name="bio" id="bio" rows="4"></textarea>
-            </div>
-        </div>
-     </div>
+        <!-- progress-container -->
 
-     <!-- controls -->
-      <div class="controls">
-        <button type="button" class="prev-btn">Prev</button>
-        <button type="button" class="next-btn">Next</button>
-        <button type="submit" class="submit-btn">Submit</button>
+        <div class="steps-container">
+            <div class="step">
+                <h3>Personal Information</h3>
+                <div class="form-control">
+                    <label for="full_name">Full Name</label>
+                    <input type="text" id="full_name" name="full_name" pattern="^(?:[A-Za-z]{2}|[A-Za-z]{1,16})(?:[ ]{0,1}(?:[A-Za-z]{1,16}|(?:Dr.|Mr.|Mrs.|Ms.|Prof.))?){0,3}([ ]{0,1}[A-Za-z]{1,16})?$" required>
+                </div>
+                <div class="form-control">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" pattern="^[A-Za-z0-9]{3,}@[A-Za-z]{2,}[.]{1}[A-Za-z.]{3,}$" required>
+                </div>
+                <div class="form-control">
+                    <label for="tel">Mobile Number</label>
+                    <input type="tel" id="demo" placeholder="" id="telephone">
+                </div>
+                <div class="form-control">
+                    <label for="designation">Your Designation</label>
+                    <input type="designation" id="designation" name="designation" required>
+                </div>
+                <div class="form-control">
+                    <label for="bussiness">Bussiness Name</label>
+                    <input type="bussiness" id="bussiness" name="bussiness" required>
+                </div>
+            </div>
+            <div class="step">
+                <h3>What kind of website services do you need?</h3>
+                <div class="form-control">
+                    <input type="radio" id="create_new_Website" name="create_new_Website" value="Create New Website"
+                        required>
+                    <label for="create_new_Website">Create New Website</label>
+                </div>
+                <div class="form-control">
+                    <input type="radio" id="redesign_new_website" name="redesign_new_website"
+                        value="Redesign new website" required>
+                    <label for="redesign_new_website">Redesign new website</label>
+                </div>
+                <div class="form-control">
+                    <input type="radio" id="maintenance_existing_website" name="maintenance_existing_website"
+                        value="Maintenance of existing website" required>
+                    <label for="maintenance_existing_website">Maintenance of existing website</label>
+                </div>
+            </div>
+            <div class="step">
+                <h3>Please enter your website domain if you have?</h3>
+                <div class="form-control">
+                    <!-- <label for="username">Username</label> -->
+                    <input type="text" id="domain" name="domain" placeholder="https://">
+                </div>
+            </div>
+            <div class="step">
+                <h3>What type of Website it is?</h3>
+                <div class="form-control">
+                    <input type="radio" id="information" name="information" value="Informative website" required>
+                    <label for="information">Informative website</label>
+                </div>
+                <div class="form-control">
+                    <input type="radio" id="membership" name="membership" value="Membership website" required>
+                    <label for="membership">Membership website</label>
+                </div>
+                <div class="form-control">
+                    <input type="radio" id="single_vendor" name="single_vendor" value="E-commerce (Single vendor)"
+                        required>
+                    <label for="single_vendor">E-commerce (Single vendor)</label>
+                </div>
+                <div class="form-control">
+                    <input type="radio" id="multivendor" name="multivendor" value="E-commerce (Multivendor)" required>
+                    <label for="multivendor">E-commerce (Multivendor)</label>
+                </div>
+                <div class="form-control">
+                    <input type="radio" id="service_provider" name="service_provider" value="Service provider (website)"
+                        required>
+                    <label for="service_provider">Service provider (website)</label>
+                </div>
+                <div class="form-control">
+                    <input type="radio" id="Others" name="Others" value="Others" required>
+                    <label for="Others">Others</label>
+                </div>
+            </div>
+            <div class="step">
+                <h3>What is the deadline for this project?</h3>
+                <div class="form-control">
+                    <input type="text" id="deadline" name="deadline" placeholder="Type your answer here" pattern="^[a-zA-Z0-9 ]{4,}$" required>
+                </div>
+            </div>
+           
+            <div class="step">
+                <h3>What is the budget for your project?</h3>
+                <div class="form-control">
+                    <input type="text" id="budget" name="budget" placeholder="Type your answer here" pattern="^[a-zA-Z0-9 ]{4,}$" required>
+                </div>
+            </div>
+            <div class="step">
+                <h3>What industry your business belong to?</h3>
+                <div class="form-control">
+                    <input type="text" id="industry" name="industry" placeholder="Type your answer here" pattern="^[A-Za-z][A-Za-z ]*[A-Za-z]$" required>
+                </div>
+            </div>
+          
+            <div class="step">
+                <h3>Describe your business?</h3>
+                <div class="form-control">
+                    <input type="text" id="business" name="business" placeholder="Describe your business in two line" pattern="^[A-Za-z][A-Za-z ]*[A-Za-z]$" required>
+                </div>
+            </div>
+            <div class="step">
+                <h3>Do you have a specific website in mind that you'd like to use as a reference for creating your own
+                    site?</h3>
+                <div class="form-control">
+                    <input type="text" id="referenceWebsite" name="referenceWebsite"
+                        placeholder="Type your answer here">
+                </div>
+            </div>
+            
+            <div class="step">
+                <h3>In which city you are located
+                    <p>Example: Mumbai, Bangalore, Delhi etc</p>
+                </h3>
+                <div class="form-control">
+                    <input type="text" id="city" name="city" placeholder="Type your answer here" pattern="^([a-zA-Zs]{2,})" required>
+                </div>
+            </div>
+        </div>
 
-      </div>
+        <!-- controls -->
+        <div class="controls">
+            <button type="button" class="prev-btn">Prev</button>
+            <button type="button" class="next-btn">Next</button>
+            <button type="submit" class="submit-btn">Submit</button>
+
+        </div>
     </form>
-
+    <script src="build/js/intlTelInput.min.js"></script> 
+    <script>
+        var input = document.querySelector("#telephone");
+        window.intlTelInput(input,({
+        // options here
+        }));
+      </script>
 </body>
+
 </html>
