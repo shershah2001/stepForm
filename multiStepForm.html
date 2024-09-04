@@ -9,8 +9,30 @@
     <script src="multiStepForm.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
-    
 
+    <style>
+        input[type="radio"] {
+            display: none;
+        }
+        input[type="radio"] + label{
+            cursor: pointer;
+            outline-color: var(--main-color);
+            border: 1px solid lightgray;
+            padding: 8px 16px;
+            border-radius: 4px;
+            width: 100%;
+            font-size: 16px;
+        }
+        input[type="radio"]:checked + label {
+            color: #0060df;
+            border: 2px solid #0060df;
+            
+    }
+    input:focus-visible{
+        border:none;
+       
+    }
+    </style>
 </head>
 
 <body>
@@ -48,15 +70,18 @@
                 <h3>Personal Information</h3>
                 <div class="form-control">
                     <label for="full_name">Full Name</label>
-                    <input type="text" id="full_name" name="full_name" pattern="^(?:[A-Za-z]{2}|[A-Za-z]{1,16})(?:[ ]{0,1}(?:[A-Za-z]{1,16}|(?:Dr.|Mr.|Mrs.|Ms.|Prof.))?){0,3}([ ]{0,1}[A-Za-z]{1,16})?$" required>
+                    <input type="text" id="full_name" name="full_name"
+                        pattern="^(?:[A-Za-z]{2}|[A-Za-z]{1,16})(?:[ ]{0,1}(?:[A-Za-z]{1,16}|(?:Dr.|Mr.|Mrs.|Ms.|Prof.))?){0,3}([ ]{0,1}[A-Za-z]{1,16})?$"
+                        required>
                 </div>
                 <div class="form-control">
                     <label for="email">Email</label>
-                    <input type="email" id="email" name="email" pattern="^[A-Za-z0-9]{3,}@[A-Za-z]{2,}[.]{1}[A-Za-z.]{3,}$" required>
+                    <input type="email" id="email" name="email"
+                        pattern="^[A-Za-z0-9]{3,}@[A-Za-z]{2,}[.]{1}[A-Za-z.]{3,}$" required>
                 </div>
                 <div class="form-control" style="display: flex; flex-direction: column;">
                     <label for="tel">Mobile Number</label>
-                    <input type="tel" id="phone" />
+                    <input type="tel" id="phone" required />
                 </div>
                 <div class="form-control">
                     <label for="designation">Your Designation</label>
@@ -70,18 +95,16 @@
             <div class="step">
                 <h3>What kind of website services do you need?</h3>
                 <div class="form-control">
-                    <input type="radio" id="create_new_Website" name="create_new_Website" value="Create New Website"
-                        required>
+                    <input type="radio" id="create_new_Website" name="service_website" value="Create New Website">
                     <label for="create_new_Website">Create New Website</label>
                 </div>
                 <div class="form-control">
-                    <input type="radio" id="redesign_new_website" name="redesign_new_website"
-                        value="Redesign new website" required>
+                    <input type="radio" id="redesign_new_website" name="service_website" value="Redesign new website">
                     <label for="redesign_new_website">Redesign new website</label>
                 </div>
                 <div class="form-control">
-                    <input type="radio" id="maintenance_existing_website" name="maintenance_existing_website"
-                        value="Maintenance of existing website" required>
+                    <input type="radio" id="maintenance_existing_website" name="service_website"
+                        value="Maintenance of existing website">
                     <label for="maintenance_existing_website">Maintenance of existing website</label>
                 </div>
             </div>
@@ -95,56 +118,58 @@
             <div class="step">
                 <h3>What type of Website it is?</h3>
                 <div class="form-control">
-                    <input type="radio" id="information" name="information" value="Informative website" required>
+                    <input type="radio" id="information" name="website_type" value="Informative website">
                     <label for="information">Informative website</label>
                 </div>
                 <div class="form-control">
-                    <input type="radio" id="membership" name="membership" value="Membership website" required>
+                    <input type="radio" id="membership" name="website_type" value="Membership website">
                     <label for="membership">Membership website</label>
                 </div>
                 <div class="form-control">
-                    <input type="radio" id="single_vendor" name="single_vendor" value="E-commerce (Single vendor)"
-                        required>
+                    <input type="radio" id="single_vendor" name="website_type" value="E-commerce (Single vendor)">
                     <label for="single_vendor">E-commerce (Single vendor)</label>
                 </div>
                 <div class="form-control">
-                    <input type="radio" id="multivendor" name="multivendor" value="E-commerce (Multivendor)" required>
+                    <input type="radio" id="multivendor" name="website_type" value="E-commerce (Multivendor)">
                     <label for="multivendor">E-commerce (Multivendor)</label>
                 </div>
                 <div class="form-control">
-                    <input type="radio" id="service_provider" name="service_provider" value="Service provider (website)"
-                        required>
+                    <input type="radio" id="service_provider" name="website_type" value="Service provider (website)">
                     <label for="service_provider">Service provider (website)</label>
                 </div>
                 <div class="form-control">
-                    <input type="radio" id="Others" name="Others" value="Others" required>
+                    <input type="radio" id="Others" name="website_type" value="Others">
                     <label for="Others">Others</label>
                 </div>
             </div>
             <div class="step">
                 <h3>What is the deadline for this project?</h3>
                 <div class="form-control">
-                    <input type="text" id="deadline" name="deadline" placeholder="Type your answer here" pattern="^[a-zA-Z0-9 ]{4,}$" required>
+                    <input type="text" id="deadline" name="deadline" placeholder="Type your answer here"
+                        pattern="^[a-zA-Z0-9 ]{4,}$" required>
                 </div>
             </div>
-           
+
             <div class="step">
                 <h3>What is the budget for your project?</h3>
                 <div class="form-control">
-                    <input type="text" id="budget" name="budget" placeholder="Type your answer here" pattern="^[a-zA-Z0-9 ]{4,}$" required>
+                    <input type="text" id="budget" name="budget" placeholder="Type your answer here"
+                        pattern="^[a-zA-Z0-9 ]{4,}$" required>
                 </div>
             </div>
             <div class="step">
                 <h3>What industry your business belong to?</h3>
                 <div class="form-control">
-                    <input type="text" id="industry" name="industry" placeholder="Type your answer here" pattern="^[A-Za-z][A-Za-z ]*[A-Za-z]$" required>
+                    <input type="text" id="industry" name="industry" placeholder="Type your answer here"
+                        pattern="^[A-Za-z][A-Za-z ]*[A-Za-z]$" required>
                 </div>
             </div>
-          
+
             <div class="step">
                 <h3>Describe your business?</h3>
                 <div class="form-control">
-                    <input type="text" id="business" name="business" placeholder="Describe your business in two line" pattern="^[A-Za-z][A-Za-z ]*[A-Za-z]$" required>
+                    <input type="text" id="business" name="business" placeholder="Describe your business in two line"
+                        pattern="^[A-Za-z][A-Za-z ]*[A-Za-z]$" required>
                 </div>
             </div>
             <div class="step">
@@ -155,13 +180,14 @@
                         placeholder="Type your answer here">
                 </div>
             </div>
-            
+
             <div class="step">
                 <h3>In which city you are located
                     <p>Example: Mumbai, Bangalore, Delhi etc</p>
                 </h3>
                 <div class="form-control">
-                    <input type="text" id="city" name="city" placeholder="Type your answer here" pattern="^([a-zA-Zs]{2,})" required>
+                    <input type="text" id="city" name="city" placeholder="Type your answer here"
+                        pattern="^([a-zA-Zs]{2,})" required>
                 </div>
             </div>
         </div>
@@ -176,17 +202,25 @@
     </form>
     <script>
         const input = document.querySelector("#phone");
+
+        // Initialize intlTelInput with the default country as US
         window.intlTelInput(input, {
-          initialCountry: "auto",
-          geoIpLookup: function(callback) {
-            fetch('https://ipinfo.io/json', { headers: { 'Accept': 'application/json' } })
-              .then(resp => resp.json())
-              .then(data => callback(data.country))
-              .catch(() => callback('US'));
-          },
-          utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js" // for formatting/validation
+            initialCountry: "US",
+            utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js" // for formatting/validation
         });
-      </script>
+
+        // Restrict input to digits only and limit to 10 digits
+        input.addEventListener("input", function (e) {
+            // Replace any non-digit characters
+            this.value = this.value.replace(/\D/g, '');
+
+            // Limit the value to the first 10 digits
+            if (this.value.length > 10) {
+                this.value = this.value.substring(0, 10);
+            }
+        });
+    </script>
+
 </body>
 
 </html>
